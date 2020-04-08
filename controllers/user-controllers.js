@@ -17,6 +17,13 @@ const getUser1 = (req, res, next) => {
 
 const allUsersByClient = (req, res, next) => {
     const client = req.params.id;
+    //require that client name is at least 10 chars. in future might want
+    //to make sure it is prequalified with dcolombo_
+    if (client.length < 11) {
+      throw new HttpError('Invalid inputs passed, please check your data.', 422);
+    }
+
+
     const hgdb = MTRDB.conn(client);
     let sql = "Select * from users";
     let query = hgdb.query(sql, (err, results) =>{

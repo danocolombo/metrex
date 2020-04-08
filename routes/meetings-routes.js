@@ -5,8 +5,8 @@ const meetingControllers = require('../controllers/meeting-controllers');
 
 const router = express.Router();
 router.get('/:cid', meetingControllers.getActiveMeetings);
-// router.get('/allUsers', meetingControllers.getAllUsers);
-router.get('/getClient/:id', meetingControllers.getClient);
+router.get('/past/:cid', meetingControllers.getPastMeetings);
+
 module.exports = router;
 
 //=======================================
