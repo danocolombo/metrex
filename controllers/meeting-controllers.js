@@ -14,8 +14,9 @@ const getActiveMeetings = (req, res, next) => {
     let sql = "SELECT ID, MtgDate, MtgType, MtgTitle FROM meetings where DATE(MtgDate)>=CURDATE() ORDER BY MtgDate";
     let query = hgdb.query(sql, (err, results) =>{
         if(err) throw err;
-        console.log(results);
-        res.send('Meetings fetched');
+        //console.log(results);
+        // res.send('Meetings fetched');
+        res.send(results);
     });
 }
 const getPastMeetings = (req, res, next) => {
@@ -32,8 +33,8 @@ const getPastMeetings = (req, res, next) => {
     let sql = "SELECT ID, MtgDate, MtgType, MtgTitle FROM meetings where DATE(MtgDate)<CURDATE() ORDER BY MtgDate DESC";
     let query = hgdb.query(sql, (err, results) =>{
         if(err) throw err;
-        console.log(results);
-        res.send('Meetings fetched');
+        //console.log(results);
+        res.send(results);
     });
 }
 exports.getActiveMeetings = getActiveMeetings;
