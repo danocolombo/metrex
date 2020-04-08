@@ -1,11 +1,15 @@
 {
     "name": "Metrex",
     "version": "1.0.0",
+    "engines": {
+        "node": "12.11.1"
+    },
     "description": "Meeter API using Express",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon app.js"
+        "start": "nodemon app.js",
+        "build": "react-scripts build"
     },
     "author": "",
     "license": "MIT",
