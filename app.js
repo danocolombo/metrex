@@ -97,23 +97,23 @@ app.use(bodyParser.json());
 //===============================
 app.use('/api/meetings', meetingsRoutes);
 app.use('/api/places', placesRoutes); // => /api/places...
-app.use('/api/users', usersRoutes);
+//app.use('/api/users', usersRoutes);
 app.use('/api/user', userRoutes);
 
 app.use((req, res, next) => {
-  const error = new HttpError('Could not find this route.', 404);
-  throw error;
+    const error = new HttpError('Could not find this route.', 404);
+    throw error;
 });
 
 app.use((error, req, res, next) => {
-  if (res.headerSent) {
-    return next(error);
-  }
-  res.status(error.code || 500)
-  res.json({message: error.message || 'An unknown error occurred!'});
+    if (res.headerSent) {
+        return next(error);
+    }
+    res.status(error.code || 500);
+    res.json({ message: error.message || 'An unknown error occurred!' });
 });
 let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000;
+if (port == null || port == '') {
+    port = 8000;
 }
-app.listen(port, console.log('started on port 5000'));
+app.listen(port, console.log(`started on port ${port}`));
