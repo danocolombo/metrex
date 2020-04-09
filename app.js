@@ -112,5 +112,8 @@ app.use((error, req, res, next) => {
   res.status(error.code || 500)
   res.json({message: error.message || 'An unknown error occurred!'});
 });
-
-app.listen(5000, console.log('started on port 5000'));
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port, console.log('started on port 5000'));
