@@ -4,8 +4,9 @@ const { check } = require('express-validator');
 const meetingControllers = require('../controllers/meeting-controllers');
 
 const router = express.Router();
-router.get('/:cid', meetingControllers.getActiveMeetings);
-router.get('/past/:cid', meetingControllers.getPastMeetings);
+//router.get('/:cid', meetingControllers.getActiveMeetings);
+router.get('/', meetingControllers.getActiveMeetings);
+router.get('/past', meetingControllers.getPastMeetings);
 
 module.exports = router;
 

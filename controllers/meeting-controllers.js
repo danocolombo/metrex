@@ -4,7 +4,8 @@ const getActiveMeetings = (req, res, next) => {
     //send back the meetings that are scheduled 
     //for today or in the future.
     //-------------------------------------------
-    const client = req.params.cid;
+    // const client = req.params.cid;
+    const client = req.header('Meeter-Client');
     //require that client name is at least 10 chars. in future might want
     //to make sure it is prequalified with dcolombo_
     if (client.length < 11) {
@@ -23,7 +24,8 @@ const getPastMeetings = (req, res, next) => {
     //send back the meetings that are scheduled 
     //prior today.
     //-------------------------------------------
-    const client = req.params.cid;
+    // const client = req.params.cid;
+    const client = req.header('Meeter-Client');
     //require that client name is at least 10 chars. in future might want
     //to make sure it is prequalified with dcolombo_
     if (client.length < 11) {

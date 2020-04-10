@@ -84,6 +84,7 @@ const bodyParser = require('body-parser');
 
 const userRoutes = require('./routes/user-routes');
 const meetingsRoutes = require('./routes/meetings-routes');
+const groupsRoutes = require('./routes/groups-routes');
 const placesRoutes = require('./routes/places-routes');
 const usersRoutes = require('./routes/users-routes');
 const HttpError = require('./models/http-error');
@@ -99,6 +100,7 @@ app.use('/api/meetings', meetingsRoutes);
 app.use('/api/places', placesRoutes); // => /api/places...
 //app.use('/api/users', usersRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/groups', groupsRoutes);
 
 app.use((req, res, next) => {
     const error = new HttpError('Could not find this route.', 404);
