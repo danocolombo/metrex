@@ -11,8 +11,8 @@
         "start": "node app.js",
         "devstart": "nodemon app.js",
         "serverstart": "DEBUG=metrex:* npm run devstart",
-        "build0": "react-scripts build",
-        "build": "node app.js"
+        "build": "react-scripts build",
+        "build1": "node app.js"
     },
     "author": "",
     "license": "MIT",
