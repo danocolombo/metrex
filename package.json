@@ -5,10 +5,12 @@
         "node": "12.16.1"
     },
     "description": "Meeter API using Express",
-    "main": "index.js",
+    "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon app.js",
+        "start": "node app.js",
+        "devstart": "nodemon app.js",
+        "serverstart": "DEBUG=metrex:* npm run devstart",
         "build": "react-scripts build"
     },
     "author": "",
