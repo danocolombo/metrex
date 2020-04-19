@@ -4,5 +4,6 @@ nodemon.json
 src/.DS_Store
 server.key
 server.cert
+server.crt
 access.log
 
