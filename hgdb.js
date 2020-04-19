@@ -1,16 +1,11 @@
 const mysql = require('mysql');
-
-// const hg = {
-//     d: '',
-//     h: '198.57.240.40',
-//     u: 'dcolombo_metrex',
-//     p: 'R0mans1212!'
-// }
+const dotenv = require('dotenv');
+dotenv.config();
 const hg = {
     d: '',
-    h: process.env.mtr_h || '198.57.240.40',
-    u: process.env.mtr_u || 'dcolombo_metrex',
-    p: process.env.mtr_p || 'R0mans1212!',
+    h: process.env.mtr_h,
+    u: process.env.mtr_u,
+    p: process.env.mtr_p,
 };
 hg.d = 'dcolombo_meeter';
 const HGCONN = mysql.createConnection({

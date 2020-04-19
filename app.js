@@ -8,6 +8,7 @@ const meetingsRoutes = require('./routes/meetings-routes');
 const groupsRoutes = require('./routes/groups-routes');
 const placesRoutes = require('./routes/places-routes');
 const HttpError = require('./models/http-error');
+const healthcheck = require('./routes/healthcheck');
 
 const app = express();
 app.use(helmet());
@@ -22,6 +23,7 @@ app.use('/api/meetings', meetingsRoutes);
 app.use('/api/places', placesRoutes); // => /api/places...
 app.use('/api/user', userRoutes);
 app.use('/api/groups', groupsRoutes);
+app.use('/healthcheck', healthcheck);
 
 app.use((req, res, next) => {
     const error = new HttpError('Could not find this route.', 404);
