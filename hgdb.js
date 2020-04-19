@@ -1,19 +1,13 @@
 const mysql = require('mysql');
-const dotenv = require('dotenv');
-dotenv.config();
+//const dotenv = require('dotenv');
+// dotenv.config();
 const hg = {
     d: '',
-    h: process.env.mtr_h,
-    u: process.env.mtr_u,
-    p: process.env.mtr_p,
+    h: process.env.MTR_H,
+    u: process.env.MTR_U,
+    p: process.env.MTR_P,
 };
-hg.d = 'dcolombo_meeter';
-const HGCONN = mysql.createConnection({
-    host: hg.h,
-    user: hg.u,
-    password: hg.p,
-    database: hg.d,
-});
+hg.d = process.eventNames.MTR_D;
 exports.conn = (db) => {
     const dbconn = mysql.createConnection({
         host: hg.h,
@@ -26,7 +20,3 @@ exports.conn = (db) => {
 exports.setDB = (d) => {
     hg.h = d;
 };
-
-// module.exports = HGCONN;
-// module.exports = setDB;
-// module.exports = conn;
