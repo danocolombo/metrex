@@ -17,8 +17,8 @@ const HttpError = require('./models/http-error');
 const healthcheck = require('./routes/healthcheck');
 
 //for https
-const privateKey = fs.readFileSync('server.key');
-const certificate = fs.readFileSync('server.crt');
+//const privateKey = fs.readFileSync('server.key');
+//const certificate = fs.readFileSync('server.crt');
 
 const app = express();
 app.use(helmet());
